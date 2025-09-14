@@ -53,7 +53,6 @@ void BST_print (const BST& root) {
     }
 }
 
-// Now you do this one ...
 void BST_remove (BST& root, std::string key) {
     if (!BST_has(root, key)) { // Case 1: Not in BST
         cerr << "Error, couldn't find \"" << key << "\" in the BST\n";
@@ -103,7 +102,7 @@ void BST_remove (BST& root, std::string key) {
     }
 }
 }
-// ... and this one too
+
 void BST_nuke (BST & root) {
     // TODO
     if (BST_isEmpty(root)) { // Base Case: Empty
@@ -158,3 +157,4 @@ int main(void) {
     BST_nuke(bst);
 
 }
+
