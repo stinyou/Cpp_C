@@ -94,86 +94,6 @@ void BST_remove (BST& root, std::string key) {
             }
         }
     }
-    /*
-    else if (root->left && root->left->key == key) {
-        if (BST_isEmpty(root->left->left) && BST_isEmpty(root->left->right)) { // Case 2: Leaf Node
-            delete(root->left);
-            root->left = nullptr;
-        }
-        else if (BST_isEmpty(root->left->left)) { // Case 3: Right Child Only
-            BST tempnode = root->left->right;
-            delete(root->left);
-            root->left = tempnode;
-        }
-        else if (BST_isEmpty(root->left->right)) { // Case 4: Left Child Only
-            BST tempnode = root->left->left;
-            delete(root->left);
-            root->left = tempnode;
-        }
-        else { // Case 5: Two Children
-            if (BST_isEmpty(root->left->left->right)) {
-                BST tempnode = root->left->left;
-                root->left->left->right = root->left->right;
-                delete(root->left);
-                root->left = tempnode;
-            }
-            else {
-                BST tempnode = root->left->left;
-                while (tempnode->right->right) {
-                    tempnode = tempnode->right;
-                }
-                string copy = tempnode->right->key;
-                BST_remove(tempnode, tempnode->right->key);
-                BST newroot = new BST_Node {copy, root->left->left, root->left->right};
-                delete(root->left);
-                root->left = newroot;
-            }
-        }
-    }
-    else if (root->right && root->right->key == key) {
-        if (BST_isEmpty(root->right->left) && BST_isEmpty(root->right->right)) { // Case 2: Leaf Node
-            delete(root->right);
-            root->right = nullptr;
-        }
-        else if (BST_isEmpty(root->right->left)) { // Case 3: Right Child Only
-            BST tempnode = root->right->right;
-            delete(root->right);
-            root->right = tempnode;
-        }
-        else if (BST_isEmpty(root->right->right)) { // Case 4: Left Child Only
-            BST tempnode = root->right->left;
-            delete(root->right);
-            root->right = tempnode;
-        }
-        else { // Case 5: Two Children
-            if (BST_isEmpty(root->right->left->right)) {
-                BST tempnode = root->right->left;
-                root->right->left->right = root->right->right;
-                delete(root->right);
-                root->right = tempnode;
-            }
-            else {
-                BST tempnode = root->right->left;
-                while (tempnode->right->right) {
-                    tempnode = tempnode->right;
-                }
-                string copy = tempnode->right->key;
-                BST_remove(tempnode, tempnode->right->key);
-                BST newroot = new BST_Node {copy, root->right->left, root->right->right};
-                delete(root->right);
-                root->right = newroot;
-            }
-        }
-    }
-    else {
-        if (key < root->key) {
-            BST_remove(root->left, key);
-        }
-        else {
-            BST_remove(root->right, key);
-        }
-    }
-    */
    else {
     if (key < root->key) {
         BST_remove(root->left, key);
@@ -236,4 +156,5 @@ int main(void) {
     BST_insert(bst, "charlie");
     BST_poin(bst);
     BST_nuke(bst);
+
 }
